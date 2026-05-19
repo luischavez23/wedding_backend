@@ -25,5 +25,9 @@ def send_rsvp_email(name, attend, message):
             "html": html_content,
         },
     )
+    
+    print(EMAIL_TO_1, EMAIL_TO_2, EMAIL_TO_3)
+    print("STATUS:", response.status_code)
+    print("BODY:", response.text)
 
     return response
