@@ -1,6 +1,6 @@
 import requests
 
-from app.config.settings import RESEND_API_KEY, EMAIL_TO, FROM_EMAIL, HTTP_RESEND
+from app.config.settings import RESEND_API_KEY, FROM_EMAIL, HTTP_RESEND, EMAIL_TO_1, EMAIL_TO_2, EMAIL_TO_3
 from app.templates.rsvp_template import generate_rsvp_template
 
 
@@ -20,7 +20,7 @@ def send_rsvp_email(name, attend, message):
         },
         json={
             "from": FROM_EMAIL,
-            "to": [EMAIL_TO],
+            "to": [EMAIL_TO_1, EMAIL_TO_2, EMAIL_TO_3],
             "subject": f"Nueva confirmación de {name}",
             "html": html_content,
         },
