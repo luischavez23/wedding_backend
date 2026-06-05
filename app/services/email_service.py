@@ -17,7 +17,7 @@ def send_rsvp_email(name, attend, message):
 
     # 🔥 1. Construir lista de correos correctamente
     emails = [
-        EMAIL_TO_1, EMAIL_TO_2
+        EMAIL_TO_1, EMAIL_TO_2,
     ]
 
     # 🔥 2. Limpiar valores inválidos (None, "", espacios)
@@ -43,6 +43,7 @@ def send_rsvp_email(name, attend, message):
             "subject": f"Nueva confirmación de {name}",
             "html": html_content,
         },
+        timeout=10, #10 segundos para evitar bloqueos largos
     )
 
     # 🔥 5. Debug real (ESTO ES CLAVE)

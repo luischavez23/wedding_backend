@@ -24,3 +24,7 @@ async def send_rsvp(data: RSVP):
         "success": True,
         "message": "Correo enviado correctamente"
     }
+
+@router.get("/")
+async def health():
+    return {"status": "ok"}
