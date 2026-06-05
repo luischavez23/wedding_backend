@@ -1,15 +1,9 @@
 def generate_rsvp_template(name, attend, message):
 
     attend_text = (
-        "Sí asistirá a la celebración"
+        "✅ Sí asistirá"
         if attend == "si"
-        else "No podrá asistir"
-    )
-
-    attend_color = (
-        "#C5A059"
-        if attend == "si"
-        else "#D87A7A"
+        else "❌ No podrá asistir"
     )
 
     return f"""
@@ -24,209 +18,102 @@ def generate_rsvp_template(name, attend, message):
         margin:0;
         padding:0;
         background:#0A0A0A;
-        font-family:Georgia, serif;
+        font-family:Arial, Helvetica, sans-serif;
     ">
 
-    <table width="100%" cellpadding="0" cellspacing="0">
-        <tr>
-            <td align="center" style="padding:40px 15px;">
+        <table
+            width="100%"
+            cellpadding="0"
+            cellspacing="0"
+            style="
+                background:#0A0A0A;
+                padding:20px 10px;
+            "
+        >
+            <tr>
+                <td align="center">
 
-                <table
-                    width="100%"
-                    cellpadding="0"
-                    cellspacing="0"
-                    style="
-                        max-width:650px;
-                        background:#111111;
-                        border:1px solid #C5A059;
-                    "
-                >
+                    <table
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                        style="
+                            max-width:600px;
+                            background:#161616;
+                            border-top:4px solid #C5A059;
+                            color:#FFFFFF;
+                        "
+                    >
 
-                    <!-- Encabezado -->
-                    <tr>
-                        <td align="center" style="padding:50px 30px 20px;">
+                        <tr>
+                            <td style="padding:30px 25px;">
 
-                            <div style="
-                                color:#C5A059;
-                                font-size:14px;
-                                letter-spacing:5px;
-                                text-transform:uppercase;
-                            ">
-                                RSVP
-                            </div>
+                                <h1 style="
+                                    margin:0 0 30px;
+                                    color:#C5A059;
+                                    text-align:center;
+                                    font-size:30px;
+                                    font-weight:normal;
+                                    font-style:italic;
+                                    line-height:1.3;
+                                ">
+                                    Nueva Confirmación RSVP
+                                </h1>
 
-                            <div style="
-                                margin-top:15px;
-                                color:#FFFFFF;
-                                font-size:38px;
-                                font-style:italic;
-                                line-height:1.3;
-                            ">
-                                Guadalupe & Eduardo
-                            </div>
+                                <p style="
+                                    margin:0 0 15px;
+                                    font-size:16px;
+                                    line-height:1.6;
+                                ">
+                                    <strong>Invitado:</strong><br>
+                                    {name}
+                                </p>
 
-                            <div style="
-                                margin-top:18px;
-                                color:#C5A059;
-                                font-size:20px;
-                            ">
-                                ✦
-                            </div>
+                                <p style="
+                                    margin:0 0 15px;
+                                    font-size:16px;
+                                    line-height:1.6;
+                                ">
+                                    <strong>Asistencia:</strong><br>
+                                    {attend_text}
+                                </p>
 
-                        </td>
-                    </tr>
+                                <p style="
+                                    margin:0 0 10px;
+                                    font-size:16px;
+                                ">
+                                    <strong>Mensaje:</strong>
+                                </p>
 
-                    <!-- Título -->
-                    <tr>
-                        <td align="center" style="padding:10px 30px 40px;">
+                                <div style="
+                                    background:#0A0A0A;
+                                    padding:20px;
+                                    border-left:4px solid #C5A059;
+                                    line-height:1.7;
+                                    word-break:break-word;
+                                ">
+                                    {message or "Sin mensaje"}
+                                </div>
 
-                            <div style="
-                                color:#F5F5F5;
-                                font-size:22px;
-                                letter-spacing:2px;
-                                text-transform:uppercase;
-                            ">
-                                Nueva Confirmación
-                            </div>
+                                <div style="
+                                    margin-top:35px;
+                                    padding-top:25px;
+                                    border-top:1px solid #2A2A2A;
+                                    text-align:center;
+                                    color:#C5A059;
+                                    font-size:18px;
+                                ">
+                                    Guadalupe & Eduardo 💍
+                                </div>
 
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
 
-                    <!-- Contenido -->
-                    <tr>
-                        <td style="padding:0 40px;">
+                    </table>
 
-                            <table width="100%">
-
-                                <tr>
-                                    <td style="
-                                        padding:18px 0;
-                                        border-bottom:1px solid #2A2A2A;
-                                    ">
-                                        <div style="
-                                            color:#C5A059;
-                                            font-size:12px;
-                                            letter-spacing:2px;
-                                            text-transform:uppercase;
-                                        ">
-                                            Invitado
-                                        </div>
-
-                                        <div style="
-                                            color:#FFFFFF;
-                                            font-size:22px;
-                                            margin-top:8px;
-                                        ">
-                                            {name}
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td style="
-                                        padding:18px 0;
-                                        border-bottom:1px solid #2A2A2A;
-                                    ">
-                                        <div style="
-                                            color:#C5A059;
-                                            font-size:12px;
-                                            letter-spacing:2px;
-                                            text-transform:uppercase;
-                                        ">
-                                            Confirmación
-                                        </div>
-
-                                        <div style="
-                                            color:{attend_color};
-                                            font-size:20px;
-                                            margin-top:8px;
-                                        ">
-                                            {attend_text}
-                                        </div>
-                                    </td>
-                                </tr>
-
-                            </table>
-
-                        </td>
-                    </tr>
-
-                    <!-- Mensaje -->
-                    <tr>
-                        <td style="padding:35px 40px;">
-
-                            <div style="
-                                color:#C5A059;
-                                font-size:12px;
-                                letter-spacing:2px;
-                                text-transform:uppercase;
-                                margin-bottom:15px;
-                            ">
-                                Mensaje
-                            </div>
-
-                            <div style="
-                                background:#181818;
-                                border-left:3px solid #C5A059;
-                                padding:25px;
-                                color:#E5E5E5;
-                                line-height:1.8;
-                                font-size:16px;
-                                word-break:break-word;
-                            ">
-                                {message or "El invitado no dejó ningún mensaje."}
-                            </div>
-
-                        </td>
-                    </tr>
-
-                    <!-- Footer -->
-                    <tr>
-                        <td align="center" style="
-                            padding:30px 40px 50px;
-                        ">
-
-                            <div style="
-                                width:80px;
-                                height:1px;
-                                background:#C5A059;
-                                margin:auto;
-                            ">
-                            </div>
-
-                            <div style="
-                                margin-top:25px;
-                                color:#C5A059;
-                                font-size:24px;
-                            ">
-                                💍
-                            </div>
-
-                            <div style="
-                                margin-top:15px;
-                                color:#FFFFFF;
-                                font-size:18px;
-                                letter-spacing:1px;
-                            ">
-                                Guadalupe & Eduardo
-                            </div>
-
-                            <div style="
-                                margin-top:10px;
-                                color:#A5A5A5;
-                                font-size:13px;
-                            ">
-                                Confirmación recibida desde el sitio web
-                            </div>
-
-                        </td>
-                    </tr>
-
-                </table>
-
-            </td>
-        </tr>
-    </table>
+                </td>
+            </tr>
+        </table>
 
     </body>
     </html>
