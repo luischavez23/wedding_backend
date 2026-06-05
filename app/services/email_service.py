@@ -5,6 +5,7 @@ from app.config.settings import (
     FROM_EMAIL,
     HTTP_RESEND,
     EMAIL_TO_1,
+    EMAIL_TO_2,
 )
 
 from app.templates.rsvp_template import generate_rsvp_template
@@ -16,7 +17,7 @@ def send_rsvp_email(name, attend, message):
 
     # 🔥 1. Construir lista de correos correctamente
     emails = [
-        EMAIL_TO_1,
+        EMAIL_TO_1, EMAIL_TO_2
     ]
 
     # 🔥 2. Limpiar valores inválidos (None, "", espacios)
