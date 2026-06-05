@@ -57,7 +57,7 @@ def generate_rsvp_template(name, attend, message):
                                     font-style:italic;
                                     line-height:1.3;
                                 ">
-                                    Nueva Confirmación RSVP
+                                    Nueva Confirmación
                                 </h1>
 
                                 <p style="
